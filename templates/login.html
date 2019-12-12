@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+{% block title %} Login {% endblock %}
+{% block mainContent %}
+<form class="col s4 offset-s3" action="{{ url_for('welcome') }}" method="GET">
+    <div class="row">
+        <div class="input-field col s12 offset-s3">
+            <input placeholder="userName" id="userName" type="text" class="validate" name="userName" required>
+            <label for="userName">User Name</label>
+        </div>
+        <div class="input-field col s12">
+            <img src="{{ url_for('video_feed') }}">
+        </div>
+        <div class="col s2 offset-s8">
+            <input type="submit" class="waves-effect waves-light btn" value="Login">
+        </div>
+        <div class="col s2 offset-s8" style="margin-top:10px;">
+            <a href="/resetLogin" class="btn">Clear</a>
+        </div>
+        <div class="col s2 offset-s8" style="margin-top:10px;">
+            <a href="/" class="btn">Home</a>
+        </div>
+    </div>
+</form>
+{% endblock %}
