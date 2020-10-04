@@ -4,13 +4,12 @@ import cv2
 class VideoCameraSave(object):
     def __init__(self):
         self.video = cv2.VideoCapture(0)
-        self.face_cascade = cv2.CascadeClassifier('/home/ankit/Desktop/websec/app-env/lib/python3.6/site-packages/cv2/data/haarcascade_frontalface_default.xml')
+        self.face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
-    def newMember(self, get_name):
+    def newMember(self, name):
         ret, frame = self.video.read()
         img_counter = 0
-        name = get_name
-        img_name = name + ".png".format(img_counter)
+        img_name = name + ".png"
         faces = self.face_cascade.detectMultiScale(frame, 1.3, 5)
         flag = 1
         while True:
